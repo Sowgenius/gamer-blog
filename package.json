@@ -23,6 +23,8 @@
     "@types/react-dom": "^16.9.1",
     "@types/styled-components": "^4.1.18",
     "babel-plugin-styled-components": "^1.10.6",
+    "contentful": "^7.11.3",
+    "moment": "^2.24.0",
     "next-compose-plugins": "^2.2.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.6.2"
