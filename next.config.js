@@ -20,7 +20,7 @@ const nextConfig = {
     // Will be available on both server and client
     API_URL: process.env.REACT_APP_SERVICE_URL,
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
+    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN CFPAT-SGfVnRosSZsFR8oI-__EyhszbQJidaN1hC8OEEqU86A
   }
 };
 
