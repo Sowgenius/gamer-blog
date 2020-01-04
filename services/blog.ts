@@ -15,7 +15,7 @@ export class BlogApi {
     });
   }
 
-// Fetch method for blog entries and blog post sby slug 
+// Fetch method for blog entries and blog post by slug 
   async fetchBlogEntries(): promise<Array<BlogPost>> {
     return await this.client
     .getEntries ({
