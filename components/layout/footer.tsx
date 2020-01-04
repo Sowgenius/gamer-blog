@@ -20,7 +20,7 @@ export const Footer = () => {
         </span>
         <div className="float-right">
           <a
-            href="https://github.com/martindavid/flask-react-docker-app"
+            href="https://github.com/sowgenius/gamer-blog"
             target="_blank"
             rel="noopener noreferrer"
           >
