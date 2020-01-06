@@ -38,7 +38,7 @@ export default class CustomDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Flask, React App</title>
+          <title>Gamer-Blog, Next React App</title>
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

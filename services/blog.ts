@@ -1,25 +1,24 @@
-import {ContentfulClientApi, createClient} from 'contentful';
-import {Author, HeroImage, BlogPost} from 'blog.types';
+import { ContentfulClientApi, createClient} from 'contentful';
+import { Author, HeroImage, BlogPost } from "./blog.types";
 import moment from 'moment';
-import { BlogPost, BlogPost } from './blog.types';
 
 export class BlogApi {
-    client: ContentfulClientApi;
-}
+  client: ContentfulClientApi;
+
 
   constructor() {
-    this.client = createCLient({
+    this.client = createClient({
 
       space: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-  }
+  };
 
 // Fetch method for blog entries and blog post by slug 
-  async fetchBlogEntries(): promise<Array<BlogPost>> {
+  async fetchBlogEntries(): Promise<Array<BlogPost>> {
     return await this.client
     .getEntries ({
-      content_type: "blogPost";
+      content_type: "blogPost",
     })
     .then(entries => {
       if (entries && entries.items && entries.items.length > 0) {
@@ -45,7 +44,7 @@ export class BlogApi {
 convertImage = (rawImage): HeroImage => {
   if (rawImage) {
     return {
-      imageUrl: rawImage.fiel.url.replace('//', "http://"),
+      imageUrl: rawImage.file.url.replace('//', "http://"),
       description: rawImage.description,
       title: rawImage.title,
     };
@@ -72,7 +71,7 @@ convertAuthor = (rawAuthor): Author => {
 
 convertPost = (rawData): BlogPost => {
   const rawPost = rawData.fields;
-  const rawHeroImage = rawPost.heroImage. ? rawPost.heroImage.fields: null;
+  const rawHeroImage = rawPost.heroImage ? rawPost.heroImage.fields: null;
   const rawAuthor = rawPost.author ? rawPost.author.fields: null;
   return {
     id: rawData.sys.id,
@@ -82,7 +81,9 @@ convertPost = (rawData): BlogPost => {
     slug: rawPost.slug,
     tags: rawPost.tags,
     title: rawPost.title,
-    heroImage:this.convertimage(rawHeroImage),
+    heroImage:this.convertImage(rawHeroImage),
     author: this.convertAuthor(rawAuthor),
   }; 
 };
+
+}

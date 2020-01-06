@@ -1,13 +1,14 @@
   import React from 'react';
   import {Layout} from 'components/layout';
-import { BlogApi } from 'services/blog';
-import { Api } from 'services/api';
+  import { BlogApi } from 'services/blog';
+import { BlogPost } from 'services/blog.types';
+  import { BlogBox } from 'components/blog/blog-box';
 
-  type BlogPagesProps = {
-    entries: Array<BlogPost>;
-  };
+type BlogPageProps = {
+  entries: Array<BlogPost>;
+};
 
-  export default class blogPage extends React.Component<BlogPagesProps> {
+  export default class blogPage extends React.Component<BlogPageProps> {
     static async getInitialProps() {
       const api = new BlogApi();
       const entries = await api.fetchBlogEntries();
@@ -17,7 +18,7 @@ import { Api } from 'services/api';
     renderBlogList = entries =>
       entries.map((entry, i) => {
         return (
-          <Blogbox
+          < BlogBox
             key={i}
             id={entry.id}
             slug={entry.slug}
@@ -25,7 +26,7 @@ import { Api } from 'services/api';
             title={entry.title}
             author={entry.author.name}
             description={entry.description}
-            tag={entry.tag}
+            tags={entry.tag}
           />
         );
       });
