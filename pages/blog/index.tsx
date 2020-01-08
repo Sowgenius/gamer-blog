@@ -1,8 +1,8 @@
   import React from 'react';
   import {Layout} from 'components/layout';
   import { BlogApi } from 'services/blog';
-import { BlogPost } from 'services/blog.types';
-  import { BlogBox } from 'components/blog/blog-box';
+  import { BlogPost } from 'services/blog.types';
+  import { BlogBox } from 'pages/blog/blog-box';
 
 type BlogPageProps = {
   entries: Array<BlogPost>;
